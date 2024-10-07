@@ -4,9 +4,17 @@ resource "juju_application" "k8s_postgresql" {
   trust = true
 
   charm {
-    name    = "postgresql-k8s"
-    channel = var.postgresql_charm_channel
+    name     = "postgresql-k8s"
+    channel  = var.postgresql_charm_channel
+    revision = var.postgresql_charm_revision
+    base     = var.postgresql_charm_base
   }
 
-  units = 1
+  config = var.postgresql_charm_config
+
+  storage_directives = {
+    pgdata = var.postgresql_storage_size
+  }
+
+  units = var.postgresql_charm_units
 }
