@@ -18,7 +18,7 @@ variable "juju_model_name" {
 variable "postgresql_charm_revision" {
   description = "Postgresql K8s charm revision"
   type        = number
-  default     = 381
+  default     = null
 }
 
 

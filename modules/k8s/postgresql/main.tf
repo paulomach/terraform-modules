@@ -16,5 +16,6 @@ resource "juju_application" "k8s_postgresql" {
     pgdata = var.postgresql_storage_size
   }
 
-  units = var.postgresql_charm_units
+  units       = var.postgresql_charm_units
+  constraints = var.postgresql_charm_constraints
 }

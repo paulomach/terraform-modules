@@ -18,7 +18,7 @@ variable "mysql_charm_channel" {
 variable "mysql_charm_revision" {
   description = "MySQL K8s charm revision"
   type        = number
-  default     = 180
+  default     = null
 }
 
 variable "mysql_charm_base" {
