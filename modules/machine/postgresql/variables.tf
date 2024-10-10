@@ -16,20 +16,19 @@ variable "juju_model_name" {
 }
 
 variable "postgresql_charm_revision" {
-  description = "Postgresql K8s charm revision"
+  description = "Postgresql charm revision"
   type        = number
-  default     = 468
+  default     = null
 }
 
-
 variable "postgresql_charm_base" {
-  description = "Postgresql K8s charm base"
+  description = "Postgresql charm base"
   type        = string
   default     = "ubuntu@22.04"
 }
 
 variable "postgresql_charm_units" {
-  description = "Postgresql K8s charm units number"
+  description = "Postgresql charm units number"
   type        = number
   default     = 1
 }

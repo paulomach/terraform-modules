@@ -10,11 +10,6 @@ resource "juju_application" "machine_postgresql" {
     base     = var.postgresql_charm_base
   }
 
-  #config = {
-  #  plugin_hstore_enable  = true
-  #  plugin_pg_trgm_enable = true
-  #}
-
   config = var.postgresql_charm_config
 
   storage_directives = {
