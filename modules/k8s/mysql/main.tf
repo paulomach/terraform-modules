@@ -1,21 +1,21 @@
 resource "juju_application" "k8s_mysql" {
-  name  = var.mysql_app_name
+  name  = var.app_name
   model = var.juju_model_name
   trust = true
 
   charm {
     name     = "mysql-k8s"
-    channel  = var.mysql_charm_channel
-    revision = var.mysql_charm_revision
-    base     = var.mysql_charm_base
+    channel  = var.channel
+    revision = var.revision
+    base     = var.base
   }
-
-  config = var.mysql_charm_config
 
   storage_directives = {
-    database = var.mysql_storage_size
+    database = var.storage_size
   }
 
-  units       = var.mysql_charm_units
-  constraints = var.mysql_charm_constraints
+  units       = var.units
+  constraints = var.constraints
+  config      = var.config
+  resources   = var.resources
 }

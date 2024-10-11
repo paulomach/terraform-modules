@@ -3,49 +3,56 @@ variable "juju_model_name" {
   type        = string
 }
 
-variable "mysql_app_name" {
-  description = "MySQL application name"
+variable "app_name" {
+  description = "Name of the application in the Juju model."
   type        = string
   default     = "mysql-k8s"
 }
 
-variable "mysql_charm_channel" {
-  description = "MySQL K8s charm channel"
+variable "channel" {
+  description = "Charm channel to use when deploying"
   type        = string
   default     = "8.0/stable"
 }
 
-variable "mysql_charm_revision" {
-  description = "MySQL K8s charm revision"
+variable "revision" {
+  description = "Revision number to deploy charm"
   type        = number
   default     = null
 }
 
-variable "mysql_charm_base" {
-  description = "MySQL K8s charm base"
+variable "base" {
+  description = "Application base"
   type        = string
   default     = "ubuntu@22.04"
 }
 
-variable "mysql_charm_units" {
-  description = "MySQL K8s charm units number"
+variable "units" {
+  description = "Number of units to deploy"
   type        = number
   default     = 1
 }
 
-variable "mysql_charm_constraints" {
-  type    = string
-  default = ""
+variable "constraints" {
+  description = "Juju constraints to apply for this application."
+  type        = string
+  default     = ""
 }
 
-variable "mysql_storage_size" {
-  description = "MySQL storage size"
+variable "storage_size" {
+  description = "Storage size"
   type        = string
   default     = "10G"
 }
 
-variable "mysql_charm_config" {
-  description = "MySQL charm configuration"
+variable "config" {
+  description = "Application configuration. Details at https://charmhub.io/mysql-k8s/configurations"
+  type        = map(string)
+  default     = {}
+}
+
+variable "resources" {
+  description = "Resources to use with the application"
   type        = map(string)
   default     = {}
 }

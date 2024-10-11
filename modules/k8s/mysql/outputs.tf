@@ -13,6 +13,8 @@ output "provides" {
 
 output "requires" {
   value = {
-    logging = "logging"
+    logging       = "logging"
+    certificates  = "certificates"
+    s3_parameters = "s3-parameters"
   }
 }
